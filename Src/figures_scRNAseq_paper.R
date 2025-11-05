@@ -276,7 +276,7 @@ getMouseGene <- function(){
 ## set the R objects ----------------------------------
 
 # load the edgeR object
-edgeR_result <- readRDS("Output/rds/edgeR_results.rds")
+edgeR_result <- readRDS("Datasets/edgeR_results.rds")
 
 # create the output directory
 outDir <- create_dir("Output/Plots")
@@ -422,7 +422,7 @@ saveFigures(fileName = "volcanoplot_MPP2-3_fusion_day5_paper", ggplot = volcan, 
 
 
 # load the camera result
-camera_results <- readRDS(file = "Output/rds/camera_results.rds")
+camera_results <- readRDS(file = "Datasets/camera_results.rds")
 
 # get the mouse genes
 mouse_genes <- getMouseGene()
@@ -600,7 +600,7 @@ for(day in c("day2", "day5")){
 
 # figure 3B -------------------------------------------------------------------------
 
-sce_original <- readRDS("../Output/rds/sce_day2_and_day5_combined_clutering.rds")
+sce_original <- readRDS("Datasets/sce_day2_and_day5_combined_clutering.rds")
 
 # add the new annotations 
 sce_original$final_annotation = as.character(sce_original$combined_clustering)
@@ -648,7 +648,7 @@ saveFigures(fileName = "TSNE_cellAnnotation_FinalVersion_fig3", ggplot = plot, d
 # figure 3C -------------------------------------------------------------------------
 
 
-sce <- readRDS("Output/rds/Athimed_correctionCellCycle/Athimed_analysis/Revision/rds/sce_iSEE_Outofmemory.rds")
+sce <- readRDS("Datasets/sce_iSEE_Outofmemory.rds")
 
 # select the sce cells
 sce_original_gating <- sce_original[,colnames(sce)]
